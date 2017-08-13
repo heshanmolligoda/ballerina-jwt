@@ -5,7 +5,7 @@ import jwt;
 
 function main (string[] args) {
     json userInfo = {email : "irshadn@wso2.com"};
-    var token, _ = jwt:encode(userInfo, "WUM Shared Key Used in the JWT encryption", "HS256");
+    var token, _ = jwt:encode(userInfo, "Some Long Shared Key Goes here for JWT encryption", "HS256");
 
     system:println(token);
 
