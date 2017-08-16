@@ -57,5 +57,16 @@ function decode (string token) (json payload, JWTError  error){
     string payloadString = utils:base64decode(data[1]);
     payload = jsons:parse(payloadString);
     return;
+}
 
+@doc:Description {value:"Returns user's email contained in JWT"}
+@doc:Param {value:"token: JWT Token"}
+@doc:Return {value:"emai: user email"}
+function getEmail (string jwtToken)(string email)  {
+
+    var payload,_ = decode(jwtToken);
+    string strinPayload = jsons:toString(payload);
+    string[] payloadData = strings:split(jwtpayload,",");
+    email = strings:subString(payloadData[11],39,strings:length(payloadData[11])-1);
+    return;
 }
